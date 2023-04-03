@@ -15,16 +15,16 @@ const Navbar = () => {
       <div className='w-full flex justify-between items-center max-w-7xl px-5'>
         <Link 
           to='/'
-          className='flex text-primary items-center'
+          className='flex text-primary items-center gap-1'
           onClick={() => {
             setActive('')
-            setToggle(!toggle)
+            setToggle(false)
           }}
         >
           <AiFillCode />
           <p>e<span>Martin</span></p>
         </Link>
-        <ul className='sm:flex hidden gap-5'>
+        <ul className='sm:flex hidden gap-10'>
           {
             navLink.map((nav) => (
               <li
