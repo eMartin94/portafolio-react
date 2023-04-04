@@ -15,6 +15,7 @@ import powerpoint from './skills/powerpoint.svg'
 import reactjs from './skills/reactjs.svg'
 import tailwindcss from './skills/tailwindcss.svg'
 import word from './skills/word.svg'
+import photo from './photo.jpg'
 
 import {
   AiFillInstagram,
@@ -53,4 +54,5 @@ export {
   AiFillPhone,
   AiFillEnvironment,
   AiOutlineDownload,
+  photo,
 }
