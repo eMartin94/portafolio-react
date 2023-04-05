@@ -16,6 +16,7 @@ import reactjs from './skills/reactjs.svg'
 import tailwindcss from './skills/tailwindcss.svg'
 import word from './skills/word.svg'
 import photo from './photo.jpg'
+import micv from './CV-Eduardo_Pizango.pdf'
 
 import {
   AiFillInstagram,
@@ -55,4 +56,5 @@ export {
   AiFillEnvironment,
   AiOutlineDownload,
   photo,
+  micv,
 }
