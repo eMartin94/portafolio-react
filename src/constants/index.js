@@ -1,4 +1,27 @@
-import { AiFillInstagram, autocad, css3, excel, figma, git, html5, illustrator, java, javascript, mongodb, mysql, nodejs, photoshop, powerpoint, reactjs, tailwindcss, word } from '../assets'
+import {
+  autocad,
+  bootstrap,
+  consigueventas,
+  css3,
+  excel,
+  figma,
+  gecoi,
+  git,
+  hcg,
+  html5,
+  illustrator,
+  java,
+  javascript,
+  megaoffice,
+  mongodb,
+  mysql,
+  nodejs,
+  photoshop,
+  powerpoint,
+  reactjs,
+  tailwindcss,
+  word,
+} from '../assets';
 
 const navLink = [
   {
@@ -17,7 +40,7 @@ const navLink = [
     id: 'contact',
     title: 'Contacto',
   },
-]
+];
 
 const skills = [
   {
@@ -30,39 +53,55 @@ const skills = [
   },
   {
     name: 'Javascript',
-    icon: javascript
+    icon: javascript,
   },
   {
     name: 'ReactJS',
-    icon: reactjs
+    icon: reactjs,
   },
   {
     name: 'Tailwindcss',
-    icon: tailwindcss
+    icon: tailwindcss,
+  },
+  {
+    name: 'Bootstrap',
+    icon: bootstrap,
   },
   {
     name: 'Java',
-    icon: java
+    icon: java,
   },
   {
     name: 'Node JS',
-    icon: nodejs
+    icon: nodejs,
   },
   {
     name: 'MongoDB',
-    icon: mongodb
+    icon: mongodb,
   },
   {
     name: 'MySQL',
-    icon: mysql
+    icon: mysql,
   },
   {
     name: 'Git',
-    icon: git
+    icon: git,
   },
-]
+];
 
 const otherSkills = [
+  {
+    name: 'Photoshop',
+    icon: photoshop,
+  },
+  {
+    name: 'Illustrator',
+    icon: illustrator,
+  },
+  {
+    name: 'Figma',
+    icon: figma,
+  },
   {
     name: 'Excel',
     icon: excel,
@@ -76,37 +115,70 @@ const otherSkills = [
     icon: powerpoint,
   },
   {
-    name: 'Photoshop',
-    icon: photoshop,
-  },
-  {
-    name: 'Illustrator',
-    icon: illustrator,
-  },
-  {
     name: 'Autocad',
     icon: autocad,
   },
-  {
-    name: 'Figma',
-    icon: figma,
-  },
-]
+];
 
 const experiences = [
   {
-    title: 'hola',
-    company_name: 'hola sac',
-    icon: AiFillInstagram,
+    title: 'Desarrollador Frontend',
+    company_name: 'Grupo Consigueventas Inversiones E.I.R.L',
+    icon: consigueventas,
     iconBg: '#15141b',
-    date: '28-03-2023',
+    color: '#7FE9DE',
+    date: 'Septiembre 2022 - Febrero 2023',
     points: [
-      'sadasdas',
-      'dasdasdas',
-      'dasdasdas',
-    ]
-  }
-]
+      'Diseño y desarrollo de componentes de interfaz de usuario utilizando React.',
+      'Implementar y mantener el diseño visual de la aplicación.',
+      'Participar en la planificación de las funcionalidades y en la priorización de las tareas.',
+    ],
+    achievement:
+      'Implementación de características avanzadas de navegación y usabilidad en una aplicación web, como buscadores, filtros y menús desplegables.',
+  },
+  {
+    title: 'Asesor Comercial',
+    company_name: 'MegaOffice Perú S.A.C.',
+    icon: megaoffice,
+    iconBg: '#fff',
+    color: '#15141b',
+    date: 'Noviembre 2020 - Abril 2021',
+    points: [
+      'Consultoría en el amoblamiento de oficinas.', 
+      'Registrar y actualizar información en la ERP Odoo.', 
+      'Realizar seguimiento a clientes para fidelizar relación con la empresa.',
+    ],
+    achievement: 'Aumentar la cartera de clientes buscando nuevas oportunidades de venta.',
+  },
+  {
+    title: 'Asistente de Logística',
+    company_name: 'HCG Ingeniería S.A.C.',
+    icon: hcg,
+    iconBg: '#15141b',
+    color: '#7FE9DE',
+    date: 'Febrero 2020 - Marzo 2020',
+    points: [
+      'Planificar y participar en inventarios del almacén. ', 
+      'Solicitar cotizaciones, evaluar y generar órdenes de compra.', 
+      'Ingresar y registrar productos en el sistema de almacén',
+    ],
+    achievement: 'Implementación de Kardex para el seguimiento de entradas y salidas.',
+  },
+  {
+    title: 'Asistente de Logística',
+    company_name: 'Grupo Empresarial Eco ingenierías S.A.C.',
+    icon: gecoi,
+    iconBg: '#fff',
+    color: '#15141b',
+    date: 'Diciembre 2017 - Julio 2019',
+    points: [
+      'Evaluar y contratar servicios de transporte y alquiler de servicios.', 
+      'Solicitar cotizaciones, evaluar y generar órdenes de compra.', 
+      'Planificar y participar en inventarios del almacén.',
+    ],
+    achievement: 'Minimizar costos y asegurar el flujo continuo de la producción a un 90%',
+  },
+];
 
 const projects = [
   {
@@ -116,11 +188,11 @@ const projects = [
       {
         name: '',
         color: '',
-      }
+      },
     ],
     image: '',
-    source_code_link: ''
-  }
-]
+    source_code_link: '',
+  },
+];
 
-export { navLink, skills, experiences, projects, otherSkills }
+export { navLink, skills, experiences, projects, otherSkills };

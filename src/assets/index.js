@@ -15,8 +15,17 @@ import powerpoint from './skills/powerpoint.svg'
 import reactjs from './skills/reactjs.svg'
 import tailwindcss from './skills/tailwindcss.svg'
 import word from './skills/word.svg'
+import bootstrap from './skills/bootstrap.svg'
+
 import photo from './photo.jpg'
 import micv from './CV-Eduardo_Pizango.pdf'
+import logo from './logo.svg'
+import person from './person.png'
+
+import consigueventas from './company/consigueventas-logo.jpeg'
+import hcg from './company/hcg-logo.jpeg'
+import megaoffice from './company/megaoffice-logo.jpeg'
+import gecoi from './company/gecoi-logo.jpeg'
 
 import {
   AiFillInstagram,
@@ -47,6 +56,7 @@ export {
   reactjs,
   tailwindcss,
   word,
+  bootstrap,
   AiFillInstagram,
   AiFillGithub,
   AiFillLinkedin,
@@ -57,4 +67,10 @@ export {
   AiOutlineDownload,
   photo,
   micv,
+  logo,
+  consigueventas,
+  hcg,
+  megaoffice,
+  gecoi,
+  person,
 }

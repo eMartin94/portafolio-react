@@ -1,17 +1,25 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { AiFillCode } from 'react-icons/ai'
 import { Link } from 'react-router-dom'
 import { navLink } from '../constants'
 import { styles } from '../styles'
+import { logo } from '../assets'
+import ButtonMode from './ButtonMode'
+import { ThemeContext } from '../utils/ThemeContext'
 
 const Navbar = () => {
   const [active, setActive] = useState('')
   const [toggle, setToggle] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  // const { isDarkMode, setIsDarkMode } = useContext(ThemeContext);
 
   const handleMenu = () => {
     setToggle(!toggle)
   }
+
+  // const toggleDarkMode = () => {
+  //   setIsDarkMode(!isDarkMode);
+  // }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -43,7 +51,8 @@ const Navbar = () => {
             window.scrollTo(0, 0);
           }}
         >
-          <AiFillCode />
+          {/* <AiFillCode /> */}
+          <img src={logo} width={20} height={20}/>
           <p>e<span>Martin</span></p>
         </Link>
         <ul className='sm:flex hidden gap-7 md:gap-10'>
@@ -61,6 +70,8 @@ const Navbar = () => {
             ))
           }
         </ul>
+
+        {/* <ButtonMode isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} /> */}
 
         <div className='sm:hidden'>
           <div 

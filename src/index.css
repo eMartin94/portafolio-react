@@ -45,6 +45,20 @@
   transform: rotate(-45deg);
 }
 
+.hash-span {
+  margin-top: -100px;
+  padding-bottom: 100px;
+  display: block;
+}
+
+.tippy-box[data-theme~='custom'] {
+  background-color: #fff;
+  color: #15141b;
+}
+
+.tippy-box[data-theme~='custom'][data-placement^='bottom'] > .tippy-arrow::before {
+  border-bottom-color: #7FE9DE;
+}
 
 ::-webkit-scrollbar {
   width: 8px;

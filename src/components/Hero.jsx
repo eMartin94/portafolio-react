@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from "react";
-import { styles } from "../styles";
-import { photo, micv } from "../assets";
-import { TypeAnimation } from "react-type-animation";
+import React, { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
+import { styles } from '../styles';
+import { slideIn, staggerContainer, textVariant } from '../utils/variants'
+import { photo, micv } from '../assets';
+import { TypeAnimation } from 'react-type-animation';
 import {
   AiFillFacebook,
   AiFillGithub,
@@ -9,7 +11,7 @@ import {
   AiFillLinkedin,
   AiOutlineDownload,
   AiOutlineLoading,
-} from "react-icons/ai";
+} from 'react-icons/ai';
 
 const Hero = () => {
   const [downloading, setDownloading] = useState(false);
@@ -18,7 +20,7 @@ const Hero = () => {
   const downloadFile = async () => {
     try {
       const response = await fetch(micv);
-      const contentLength = response.headers.get("content-length");
+      const contentLength = response.headers.get('content-length');
       const fileSize = parseFloat(contentLength) || 0;
       const connectionSpeed = 1024;
       const downloadTime =
@@ -61,22 +63,27 @@ const Hero = () => {
   }, [completed]);
 
   return (
-    <section className="relative w-full h-screen mx-auto">
+    <motion.section 
+    variants={staggerContainer()}
+    initial='hidden'
+        whileInView='show'
+        viewport={{ once: true, amount: 0.25 }} 
+    className="relative w-full h-screen mx-auto">
       <div
-        className={` absolute inset-0 top-[70px] ${styles.paddingX} flex flex-row items-start gap-5`}
+        className={` absolute inset-0 top-[70px] ${styles.paddingX} flex flex-row gap-5`}
       >
         <div
-          className={`${styles.paddingY} flex lg:flex-row flex-col gap-5 items-center w-full h-full justify-evenly `}
+          className={`${styles.paddingY} grid md:grid-cols-2 grid-cols-1 gap-5 place-items-center w-full h-ful`}
         >
-          <div className="flex flex-col max-w-full sm:w-[55%] justify-center items-center lg:items-start">
+          <div className="flex flex-col w-full justify-center items-center md:items-start z-10 xl:pl-20">
             <h1 className={`${styles.heroHeadText}`}>Martin Pizango</h1>
-            <div className="text-center lg:text-start flex flex-row lg:flex-col sm:flex-row gap-2">
+            <div className="w-full items-center md:items-start flex flex-col gap-2">
               <span className={`${styles.heroSubText}`}>Soy</span>
               <TypeAnimation
-                sequence={["Desarrollador!", 2000, "Diseñador!", 2000]}
+                sequence={['Desarrollador!', 2000, 'Diseñador!', 2000]}
                 cursor={true}
                 repeat={Infinity}
-                className="font-bold text-primary text-[24px] lg:text-[60px] sm:text-[45px] xs:text-[30px] lg:leading-[98px]"
+                className="font-bold text-primary text-[30px] lg:text-[60px] sm:text-[45px] lg:leading-[98px]"
               />
             </div>
             {/* <p className="text-secondary mt-5 leading-7 text-[12px] sm:text-[14px] md:text-[16px]">
@@ -87,8 +94,11 @@ const Hero = () => {
               metodologías ágiles y en la gestión de proyectos.
             </p> */}
             <div className="mt-5">
-              <p className="text-white">Sígueme en mis redes sociales:</p>
-              <ul className="flex flex-row gap-5 mt-2 justify-center lg:justify-start">
+              <motion.p variants={textVariant()} className="text-[14px] sm:text-[16px] text-white">Sígueme en mis redes sociales:</motion.p>
+              <motion.ul 
+                variants={textVariant()}
+                className="flex flex-row gap-5 mt-5 justify-center md:justify-start"
+              >
                 <li className="border-2 border-white list-none rounded-full w-10 h-10 hover:border-primary text-white hover:text-primary transition-all duration-300">
                   <a
                     href=""
@@ -121,12 +131,13 @@ const Hero = () => {
                     <AiFillLinkedin />
                   </a>
                 </li>
-              </ul>
+              </motion.ul>
             </div>
-            <div className="lg:mt-10 mt-5">
-              <a
+            <div className="mt-10" >
+              <motion.a
+                variants={textVariant()}
                 href={micv}
-                className="flex gap-5 items-center justify-center bg-primary border-2 border-primary py-2 px-4 rounded-lg text-tertiary font-bold hover:text-primary hover:bg-transparent transition-all duration-200 ease-linear"
+                className={`${styles.btn}`}
                 download
                 onClick={handleClick}
               >
@@ -145,7 +156,7 @@ const Hero = () => {
                   <>
                     <AiOutlineDownload
                       className={`${
-                        downloading ? "hidden" : "block"
+                        downloading ? 'hidden' : 'block'
                       } text-[20px]`}
                     />
                     Exitoso!
@@ -154,20 +165,22 @@ const Hero = () => {
                   <>
                     <AiOutlineDownload
                       className={`${
-                        downloading ? "hidden" : "block"
+                        downloading ? 'hidden' : 'block'
                       } text-[20px]`}
                     />
                     Descargar
                   </>
                 )}
-              </a>
+              </motion.a>
             </div>
           </div>
-          <div className="relative flex w-full max-w-lg lg:justify-end justify-center">
-            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" 
+          <div className="relative md:flex w-full max-w-lg lg:justify-end justify-center hidden">
+            <svg
+              viewBox="0 0 200 200"
+              xmlns="http://www.w3.org/2000/svg"
               className="absolute top-0 left-0"
-              style={{zIndex: 0}}
-              stroke="#7FE9DE" strokeWidth={3}
+              style={{ zIndex: 0 }}
+              stroke="#7FE9DE"
             >
               <path
                 d="M 0, 87.5
@@ -179,33 +192,32 @@ const Hero = () => {
                 transform="rotate(-30, 100, 100) translate(12.5 12.5)"
               ></path>
             </svg>
-            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" className='z-10'>
+
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
               <defs>
                 <mask id="myMask">
-                  <rect width="100%" height="100%" fill="black" />
                   <path
                     d="M 0, 87.5
-                C 0, 23.625 23.625, 0 87.5, 0
-                S 175, 23.625 175, 87.5
-                151.375, 175 87.5, 175
-                0, 151.375 0, 87.5"
+                      C 0, 23.625 23.625, 0 87.5, 0
+                      S 175, 23.625 175, 87.5
+                      151.375, 175 87.5, 175
+                      0, 151.375 0, 87.5"
                     fill="white"
                     transform="rotate(-30, 100, 100) translate(12.5 12.5)"
                   ></path>
                 </mask>
               </defs>
-              <rect width="100%" height="100%" mask="url(#myMask)" />
               <image
                 xlinkHref={photo}
-                width="100%"
-                height="100%"
+                width="200"
+                height="200"
                 mask="url(#myMask)"
               />
             </svg>
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

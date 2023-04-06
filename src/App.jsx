@@ -1,22 +1,29 @@
 import { BrowserRouter } from 'react-router-dom'
-import { Navbar, Hero } from './components'
-import Skills from './components/Skills'
-import Experiencie from './components/Experiencie'
-import Projects from './components/Projects'
+import { Navbar, Hero, Skills, Experiencie, Projects, About } from './components'
+import { useState } from 'react'
+import { ThemeProvider } from './utils/ThemeContext'
 
 function App() {
+  // const [isDarkMode, setisDarkMode] = useState(false);
+
+  // const toggleDarkMode = () => {
+  //   setisDarkMode(!isDarkMode);
+  // };
 
   return (
     <BrowserRouter>
-      <div className='relative z-0 bg-tertiary'>
-        <div className='bg-gradient-hero bg-cover bg-fixed'>
-          <Navbar />
-          <Hero />
+      {/* <ThemeProvider> */}
+        <div className={`relative z-0 bg-tertiary`}>
+          <div className='bg-gradient-hero bg-cover bg-fixed'>
+            <Navbar />
+            <Hero />
+          </div>
+          <About />
+          <Skills />
+          <Experiencie />
+          <Projects />
         </div>
-        <Skills />
-        <Experiencie />
-        <Projects />
-      </div>
+      {/* </ThemeProvider> */}
     </BrowserRouter>
   )
 }
