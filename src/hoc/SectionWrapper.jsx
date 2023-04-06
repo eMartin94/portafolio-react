@@ -1,9 +1,9 @@
-import { motion } from "framer-motion"
-import { styles } from "../styles"
-import { staggerContainer } from "../utils/variants"
+import { motion } from 'framer-motion';
+import { styles } from '../styles';
+import { staggerContainer } from '../utils/variants';
 
-const SectionWrapper = (Component, idName) => 
-  function HOC() {
+const SectionWrapper = (Component, idName) =>
+  function HOC(props) {
     return (
       <motion.section
         variants={staggerContainer()}
@@ -16,9 +16,9 @@ const SectionWrapper = (Component, idName) =>
           &nbsp;
         </span>
 
-        <Component />
+        <Component {...props} />
       </motion.section>
-    )
-  }
+    );
+  };
 
-export default SectionWrapper
+export default SectionWrapper;

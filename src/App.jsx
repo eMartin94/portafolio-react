@@ -1,31 +1,43 @@
-import { BrowserRouter } from 'react-router-dom'
-import { Navbar, Hero, Skills, Experiencie, Projects, About } from './components'
-import { useState } from 'react'
-import { ThemeProvider } from './utils/ThemeContext'
+import { BrowserRouter } from 'react-router-dom';
+import {
+  Navbar,
+  Hero,
+  Skills,
+  Experiencie,
+  Projects,
+  About,
+} from './components';
+import React, { useState } from 'react';
 
-function App() {
-  // const [isDarkMode, setisDarkMode] = useState(false);
+const App = () => {
+  const [mode, setMode] = useState('light');
 
-  // const toggleDarkMode = () => {
-  //   setisDarkMode(!isDarkMode);
-  // };
+  const handleToggleMode = () => {
+    setMode(mode === 'light' ? 'dark' : 'light');
+  };
 
   return (
     <BrowserRouter>
-      {/* <ThemeProvider> */}
-        <div className={`relative z-0 bg-tertiary`}>
-          <div className='bg-gradient-hero bg-cover bg-fixed'>
-            <Navbar />
-            <Hero />
-          </div>
-          <About />
-          <Skills />
-          <Experiencie />
-          <Projects />
+      <div
+        className={`relative z-0 ${
+          mode == 'dark' ? 'bg-tertiary' : 'bg-white'
+        } transition-all duration-500`}
+      >
+        <div
+          className={`${
+            mode == 'dark' ? 'bg-gradient-hero-dark' : 'bg-gradient-hero-light'
+          } bg-cover bg-fixed`}
+        >
+          <Navbar mode={mode} onToggleMode={handleToggleMode} />
+          <Hero />
         </div>
-      {/* </ThemeProvider> */}
+        <About mode={mode} />
+        <Skills mode={mode} />
+        <Experiencie mode={mode} />
+        <Projects />
+      </div>
     </BrowserRouter>
-  )
-}
+  );
+};
 
-export default App
+export default App;

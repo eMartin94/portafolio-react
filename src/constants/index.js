@@ -126,7 +126,7 @@ const experiences = [
     company_name: 'Grupo Consigueventas Inversiones E.I.R.L',
     icon: consigueventas,
     iconBg: '#15141b',
-    color: '#7FE9DE',
+    color: '#5ed8d8',
     date: 'Septiembre 2022 - Febrero 2023',
     points: [
       'Diseño y desarrollo de componentes de interfaz de usuario utilizando React.',
@@ -155,7 +155,7 @@ const experiences = [
     company_name: 'HCG Ingeniería S.A.C.',
     icon: hcg,
     iconBg: '#15141b',
-    color: '#7FE9DE',
+    color: '#5ed8d8',
     date: 'Febrero 2020 - Marzo 2020',
     points: [
       'Planificar y participar en inventarios del almacén. ', 

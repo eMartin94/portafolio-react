@@ -1,11 +1,11 @@
 <svg 
-  fill="#7FE9DE" 
+  fill="#5ed8d8" 
   viewBox="-2.4 -2.4 28.80 28.80" 
   id="file-code-4" 
   data-name="Flat Color" 
   xmlns="http://www.w3.org/2000/svg" 
   class="icon flat-color" 
-  stroke="#7FE9DE" 
+  stroke="#5ed8d8" 
   stroke-width="0.4800000000000001"
 >
   <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -26,7 +26,7 @@
     <path 
       id="secondary" 
       d="M19,22a1,1,0,0,1-.71-.29,1,1,0,0,1,0-1.42L19.59,19l-1.3-1.29a1,1,0,0,1,1.42-1.42l2,2a1,1,0,0,1,0,1.42l-2,2A1,1,0,0,1,19,22Zm-3.29-.29a1,1,0,0,0,0-1.42L14.41,19l1.3-1.29a1,1,0,0,0-1.42-1.42l-2,2a1,1,0,0,0,0,1.42l2,2a1,1,0,0,0,1.42,0ZM11,12a1,1,0,0,0-1-1H6a1,1,0,0,0,0,2h4A1,1,0,0,0,11,12Zm4-4a1,1,0,0,0-1-1H6A1,1,0,0,0,6,9h8A1,1,0,0,0,15,8Z" 
-      style="fill: #7FE9DE;"
+      style="fill: #5ed8d8;"
     >
     </path>
   </g>

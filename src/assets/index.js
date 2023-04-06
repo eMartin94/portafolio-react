@@ -21,6 +21,8 @@ import photo from './photo.jpg'
 import micv from './CV-Eduardo_Pizango.pdf'
 import logo from './logo.svg'
 import person from './person.png'
+import sun from './sun.svg'
+import moon from './moon.svg'
 
 import consigueventas from './company/consigueventas-logo.jpeg'
 import hcg from './company/hcg-logo.jpeg'
@@ -73,4 +75,6 @@ export {
   megaoffice,
   gecoi,
   person,
+  sun,
+  moon,
 }

@@ -30,7 +30,7 @@
   transform-origin: left;
 }
 .menu:hover .line {
-  background-color: #7FE9DE;
+  background-color: #5ed8d8;
 }
 
 .menu.active .line:first-child {
@@ -52,12 +52,12 @@
 }
 
 .tippy-box[data-theme~='custom'] {
-  background-color: #fff;
+  background-color: #c3c3c3;
   color: #15141b;
 }
 
 .tippy-box[data-theme~='custom'][data-placement^='bottom'] > .tippy-arrow::before {
-  border-bottom-color: #7FE9DE;
+  border-bottom-color: #5ed8d8;
 }
 
 ::-webkit-scrollbar {

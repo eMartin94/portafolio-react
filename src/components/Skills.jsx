@@ -9,7 +9,7 @@ import tippy from 'tippy.js';
 import 'tippy.js/dist/tippy.css';
 import 'tippy.js/animations/scale.css';
 
-const Skills = () => {
+const Skills = ({ mode }) => {
   const imageRefSkills = useRef([]);
   const imageRefOtherSkills = useRef([]);
 
@@ -33,7 +33,11 @@ const Skills = () => {
   return (
     <>
       <motion.div variants={textVariant()}>
-        <h2 className={`${styles.sectionHeadText}`}>
+        <h2
+          className={`${styles.sectionHeadText} ${
+            mode === 'dark' ? 'text-secondary' : 'text-tertiary'
+          }`}
+        >
           Mis <span className='text-primary'>Skills</span>
         </h2>
       </motion.div>

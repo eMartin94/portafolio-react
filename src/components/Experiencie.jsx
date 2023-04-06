@@ -1,13 +1,19 @@
-import React from 'react'
-import { SectionWrapper } from '../hoc'
-import { styles } from '../styles'
+import React from 'react';
+import { SectionWrapper } from '../hoc';
+import { styles } from '../styles';
 
-const Experiencie = () => {
+const Experiencie = ({ mode }) => {
   return (
     <div>
-      <h2 className={`${styles.sectionHeadText}`}>Mi <span className='text-primary'> Experiencia</span></h2>
+      <h2
+        className={`${styles.sectionHeadText} ${
+          mode === 'dark' ? 'text-secondary' : 'text-tertiary'
+        }`}
+      >
+        Mi <span className='text-primary'> Experiencia</span>
+      </h2>
     </div>
-  )
-}
+  );
+};
 
-export default SectionWrapper(Experiencie, 'work')
+export default SectionWrapper(Experiencie, 'work');
