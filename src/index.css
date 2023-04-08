@@ -53,7 +53,7 @@
 
 .hash-span {
   margin-top: -100px;
-  padding-bottom: 100px;
+  padding-bottom: 60px;
   display: block;
 }
 
@@ -79,6 +79,27 @@
   color: #15141b;
 }
 
+.box-img-project {
+  overflow: hidden;
+
+}
+.box-img-project img{
+  transform: scale(1);
+}
+.box-img-project:hover img{
+  filter: blur(2px);
+  transform: scale(1.1);
+}
+.box-img-project .box-icons {
+  opacity: 0;
+  transition: all .3s;
+  background-color: transparent;
+}
+.box-img-project:hover .box-icons {
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -96,6 +117,37 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.html5-color {
+  color: #FFA559;
+}
+.css3-color {
+  color: #4facfd;
+}
+.javascript-color {
+  color: #dddd04;
+}
+.spring-color {
+  color: #5bc029;
+}
+.java-color {
+  color: #93BFCF;
+}
+.thymelife-color {
+  color: #1c9768;
+}
+.mysql-color {
+  color: #A2B5BB;
+}
+.kotlin-color {
+  color: #7f52ff;
+}
+.android-color {
+  color: #3ddc84;
+}
+.firebase-color {
+  color: #ffac30;
 }
 
 @media only screen and (max-width: 1170px) {

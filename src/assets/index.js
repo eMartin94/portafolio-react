@@ -23,6 +23,9 @@ import logo from './logo.svg'
 import person from './person.png'
 import sun from './sun.svg'
 import moon from './moon.svg'
+import weatherapp from './weatherapp.jpeg'
+import ahorcadoapp from './ahorcadoapp.jpeg'
+import coursesonline from './coursesonline.png'
 
 import consigueventas from './company/consigueventas-logo.jpeg'
 import hcg from './company/hcg-logo.jpeg'
@@ -77,4 +80,7 @@ export {
   person,
   sun,
   moon,
+  weatherapp,
+  ahorcadoapp,
+  coursesonline,
 }

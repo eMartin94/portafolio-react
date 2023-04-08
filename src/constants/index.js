@@ -21,6 +21,9 @@ import {
   reactjs,
   tailwindcss,
   word,
+  weatherapp,
+  ahorcadoapp,
+  coursesonline,
 } from '../assets';
 
 const navLink = [
@@ -190,16 +193,138 @@ const experiences = [
 
 const projects = [
   {
-    name: '',
-    description: '',
+    name: 'Weather App',
+    description: 'Buscador de clima con Api weather',
     tags: [
       {
-        name: '',
-        color: '',
+        name: 'html5',
+        color: 'html5-color',
+      },
+      {
+        name: 'css3',
+        color: 'css3-color',
+      },
+      {
+        name: 'javascript',
+        color: 'javascript-color',
       },
     ],
-    image: '',
-    source_code_link: '',
+    image: weatherapp,
+    page_link: 'https://emartin94.github.io/WeatherAPP/',
+    source_code_link: 'https://github.com/eMartin94/WeatherAPP',
+  },
+  {
+    name: 'Ahorcado App',
+    description: 'Juego del ahorcado con javascript',
+    tags: [
+      {
+        name: 'html5',
+        color: 'html5-color',
+      },
+      {
+        name: 'css3',
+        color: 'css3-color',
+      },
+      {
+        name: 'javascript',
+        color: 'javascript-color',
+      },
+    ],
+    image: ahorcadoapp,
+    page_link: 'https://emartin94.github.io/AhorcadoGame/',
+    source_code_link: 'https://github.com/eMartin94/AhorcadoGame',
+  },
+  {
+    name: 'Cursos Online',
+    description: 'Proyecto de curso en línea',
+    tags: [
+      {
+        name: 'java',
+        color: 'java-color',
+      },
+      {
+        name: 'spring',
+        color: 'spring-color',
+      },
+      {
+        name: 'thymelife',
+        color: 'thymelife-color',
+      },
+      {
+        name: 'mysql',
+        color: 'mysql-color',
+      },
+    ],
+    image: coursesonline,
+    page_link: 'https://github.com/eMartin94/ProyectoCursosOnline',
+    source_code_link: 'https://github.com/eMartin94/ProyectoCursosOnline',
+  },
+  {
+    name: 'DepaHouse',
+    description: 'Proyecto de venta de inmuebles',
+    tags: [
+      {
+        name: 'kotlin',
+        color: 'kotlin-color',
+      },
+      {
+        name: 'androidstudio',
+        color: 'android-color',
+      },
+      {
+        name: 'firebase',
+        color: 'firebase-color',
+      },
+    ],
+    image: coursesonline,
+    page_link: 'https://github.com/eMartin94/ProyectoAppDepaHouse',
+    source_code_link: 'https://github.com/eMartin94/ProyectoAppDepaHouse',
+  },
+  {
+    name: 'Cursos Online',
+    description: 'Proyecto de curso en línea',
+    tags: [
+      {
+        name: 'java',
+        color: 'java-color',
+      },
+      {
+        name: 'spring',
+        color: 'spring-color',
+      },
+      {
+        name: 'thymelife',
+        color: 'thymelife-color',
+      },
+      {
+        name: 'mysql',
+        color: 'mysql-color',
+      },
+    ],
+    image: coursesonline,
+    page_link: 'https://github.com/eMartin94/ProyectoCursosOnline',
+    source_code_link: 'https://github.com/eMartin94/ProyectoCursosOnline',
+  },
+  {
+    name: 'DepaHouse',
+    description: 'Proyecto de venta de inmuebles',
+    tags: [
+      {
+        name: 'kotlin',
+        color: 'kotlin-color',
+      },
+      {
+        name: 'androidstudio',
+        color: 'android-color',
+      },
+      {
+        name: 'firebase',
+        color: 'firebase-color',
+      },
+    ],
+    image: coursesonline,
+    page_link: 'https://github.com/eMartin94/ProyectoAppDepaHouse',
+    source_code_link: 'https://github.com/eMartin94/ProyectoAppDepaHouse',
   },
 ];
 
