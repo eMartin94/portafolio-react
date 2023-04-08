@@ -9,7 +9,7 @@ import tippy from 'tippy.js';
 import 'tippy.js/dist/tippy.css';
 import 'tippy.js/animations/scale.css';
 
-const Skills = ({ mode }) => {
+const Skills = ({ isDarkMode }) => {
   const imageRefSkills = useRef([]);
   const imageRefOtherSkills = useRef([]);
 
@@ -35,7 +35,7 @@ const Skills = ({ mode }) => {
       <motion.div variants={textVariant()}>
         <h2
           className={`${styles.sectionHeadText} ${
-            mode === 'dark' ? 'text-secondary' : 'text-tertiary'
+            isDarkMode ? 'text-secondary' : 'text-tertiary'
           }`}
         >
           Mis <span className='text-primary'>Skills</span>
@@ -48,13 +48,15 @@ const Skills = ({ mode }) => {
       >
         {skills.map((skill, index) => (
           <div
-            className='sm:w-20 sm:h-20 w-10 h-10 transition-all duration-300'
+            className='flex justify-center items-center sm:w-20 sm:h-20 w-10 h-10 transition-all duration-300 rounded-full'
             key={skill.name}
           >
             <img
               src={skill.icon}
               alt={skill.name}
-              className={`w-full h-full hover:scale-105 hover:rotate-3 transition-all duration-500`}
+              className={`w-[50px] h-[50px] hover:scale-105 hover:rotate-3 transition-all duration-500 ${
+                isDarkMode ? 'invert' : 'invert-0'
+              }`}
               ref={(ele) => (imageRefSkills.current[index] = ele)}
             />
           </div>
@@ -68,13 +70,15 @@ const Skills = ({ mode }) => {
       >
         {otherSkills.map((other, index) => (
           <div
-            className='sm:w-[50px] sm:h-[50px] w-[30px] h-[30px] transition-all duration-300'
+            className='flex justify-center items-center sm:w-20 sm:h-20 w-10 h-10 transition-all duration-300'
             key={other.name}
           >
             <img
               src={other.icon}
               alt={other.name}
-              className={`w-full h-full hover:scale-105 hover:rotate-3 transition-all duration-500`}
+              className={`w-[50px] h-[50px] hover:scale-105 hover:rotate-3 transition-all duration-500 ${
+                isDarkMode ? 'invert' : 'invert-0'
+              }`}
               ref={(el) => (imageRefOtherSkills.current[index] = el)}
             />
           </div>

@@ -12,6 +12,7 @@ export default {
         primary: '#5ed8d8',
         secondary: '#c3c3c3',
         tertiary: '#15141b',
+        alternative: '#76A8A6',
         // light: {
         //   primary: '#15141b',
         //   secondary: '#c3c3c3',

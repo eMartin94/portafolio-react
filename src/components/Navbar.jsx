@@ -5,7 +5,7 @@ import { styles } from '../styles';
 import { logo, moon, sun } from '../assets';
 import ButtonMode from './ButtonMode';
 
-const Navbar = ({ mode, onToggleMode }) => {
+const Navbar = ({ isDarkMode, onToggleMode }) => {
   const [active, setActive] = useState('');
   const [toggle, setToggle] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -33,8 +33,8 @@ const Navbar = ({ mode, onToggleMode }) => {
         styles.paddingX
       } w-full  flex py-5 justify-center fixed top-0 z-20 transition-all duration-500 ${
         scrolled
-          ? `${mode === 'dark' ? 'bg-tertiary' : 'bg-white'} shadow-md`
-          : `${mode === 'dark' ? 'bg-transparent' : 'bg-transparent'} `
+          ? `${isDarkMode ? 'bg-tertiary' : 'bg-white'} shadow-md`
+          : `${isDarkMode ? 'bg-transparent' : 'bg-transparent'} `
       }`}
     >
       <div className='w-full flex justify-between items-center max-w-7xl px-0 md:px-5'>
@@ -53,16 +53,16 @@ const Navbar = ({ mode, onToggleMode }) => {
           </p>
         </Link>
         <div className='flex flex-row items-center gap-5'>
-          <div className='flex flex-row items-center gap-5'>
-            <ul className='sm:flex hidden gap-4 md:gap-10'>
+          <div className='flex flex-row items-center justify-center gap-5'>
+            <ul className='sm:flex hidden gap-4 md:gap-8'>
               {navLink.map((nav) => (
                 <li
                   key={nav.id}
                   className={`${
                     active === nav.title
-                      ? `${mode === 'dark' ? 'text-primary' : 'text-primary'}`
+                      ? `${isDarkMode ? 'text-primary' : 'text-primary'}`
                       : `${
-                          mode === 'dark'
+                          isDarkMode
                             ? `${scrolled ? 'text-white' : 'text-white'}`
                             : `${!scrolled ? 'text-white' : 'text-tertiary'}`
                         }`
@@ -73,19 +73,37 @@ const Navbar = ({ mode, onToggleMode }) => {
                 </li>
               ))}
             </ul>
-  
-            <ButtonMode mode={mode} onClick={onToggleMode}>
-              {mode === 'dark' ? (
-                <img src={sun} alt='light' width={15} height={15} />
+
+            <ButtonMode isDarkMode={isDarkMode} onClick={onToggleMode}>
+              {isDarkMode ? (
+                <div
+                  className='flex flex-row w-full items-center justify-evenly'
+                  id='dark-span'
+                >
+                  <img src={sun} alt='light' width={15} height={15} />
+                  <span className='text-tertiary text-[10px] transition-all duration-300'>
+                    Light
+                  </span>
+                </div>
               ) : (
-                <img src={moon} alt='dark' width={15} height={15} />
+                <div
+                  className='flex flex-row w-full items-center justify-evenly'
+                  id='light-span'
+                >
+                  <img src={moon} alt='dark' width={15} height={15} />
+                  <span className='text-tertiary text-[10px] transition-all duration-300'>
+                    Dark
+                  </span>
+                </div>
               )}
             </ButtonMode>
           </div>
-  
+
           <div className='sm:hidden'>
             <div
-              className={`menu ${toggle ? 'active' : ''}`}
+              className={`menu ${toggle ? 'active' : ''} ${
+                isDarkMode ? 'dark' : scrolled ? 'light' : ''
+              }`}
               onClick={handleMenu}
             >
               <div className='line'></div>

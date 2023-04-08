@@ -1,19 +1,19 @@
 import React from 'react';
 import classNames from 'classnames';
 
-const ButtonMode = ({ mode, onClick, children }) => {
+const ButtonMode = ({ isDarkMode, onClick, children }) => {
   const buttonClass = classNames(
     'rounded-full',
-    'py-2',
-    'px-2',
+    'py-1',
+    'px-1',
+    'w-[60px]',
+    // 'h-[25px]',
     'border',
     'transition-all',
     'duration-200',
-    'active:animation-spin',
-    'active:rotate-180',
     {
-      'bg-yellow-100 text-tertiary border-secondary': mode === 'dark',
-      'bg-secondary text-secondary border-secondary ': mode === 'light',
+      'bg-white text-tertiary hover:bg-secondary border-secondary': !isDarkMode,
+      'bg-white text-tertiary hover:bg-yellow-50 border-secondary ': isDarkMode,
     }
   );
 

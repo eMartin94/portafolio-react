@@ -23,11 +23,17 @@
   cursor: pointer;
 }
 .menu .line {
-  background-color: white;
+  background-color: #fff;
   height: 2px;
   width: 100%;
   transition: all .5s;
   transform-origin: left;
+}
+.menu.dark .line {
+  background-color: #fff;
+}
+.menu.light .line {
+  background-color: #15141b;
 }
 .menu:hover .line {
   background-color: #5ed8d8;
@@ -60,6 +66,19 @@
   border-bottom-color: #5ed8d8;
 }
 
+#dark-span:active > img,
+#light-span:active > img {
+  animation: spin 1s linear infinite;
+  transition: all 2s ease;
+}
+
+.vertical-timeline-element.dark .vertical-timeline-element-date {
+  color: #c3c3c3;
+}
+.vertical-timeline-element .vertical-timeline-element-date {
+  color: #15141b;
+}
+
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -68,4 +87,22 @@
 }
 ::-webkit-scrollbar-thumb {
   background-color: #22202b;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media only screen and (max-width: 1170px) {
+  .vertical-timeline-element.dark .vertical-timeline-element-date {
+    color: #6e6e6e;
+  }
+  .vertical-timeline-element .vertical-timeline-element-date {
+    color: #c3c3c3;
+  }
 }

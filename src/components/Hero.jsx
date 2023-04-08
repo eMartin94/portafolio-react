@@ -98,34 +98,22 @@ const Hero = () => {
                 className='flex flex-row gap-5 mt-5 justify-center md:justify-start'
               >
                 <li className={styles.socialList}>
-                  <a
-                    href=''
-                    className={styles.iconSocialList}
-                  >
+                  <a href='' className={styles.iconSocialList}>
                     <AiFillFacebook />
                   </a>
                 </li>
                 <li className={styles.socialList}>
-                  <a
-                    href=''
-                    className={styles.iconSocialList}
-                  >
+                  <a href='' className={styles.iconSocialList}>
                     <AiFillInstagram />
                   </a>
                 </li>
                 <li className={styles.socialList}>
-                  <a
-                    href=''
-                    className={styles.iconSocialList}
-                  >
+                  <a href='' className={styles.iconSocialList}>
                     <AiFillGithub />
                   </a>
                 </li>
                 <li className={styles.socialList}>
-                  <a
-                    href=''
-                    className={styles.iconSocialList}
-                  >
+                  <a href='' className={styles.iconSocialList}>
                     <AiFillLinkedin />
                   </a>
                 </li>

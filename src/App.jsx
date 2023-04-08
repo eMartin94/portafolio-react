@@ -3,38 +3,54 @@ import {
   Navbar,
   Hero,
   Skills,
-  Experiencie,
+  Experience,
   Projects,
   About,
 } from './components';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const App = () => {
-  const [mode, setMode] = useState('light');
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    const prefersDarkMode =
+      window.matchMedia &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const storedMode = localStorage.getItem('mode');
+    if (storedMode !== null) {
+      return JSON.parse(storedMode);
+    } else if (prefersDarkMode) {
+      return true;
+    } else {
+      return false;
+    }
+  });
 
   const handleToggleMode = () => {
-    setMode(mode === 'light' ? 'dark' : 'light');
+    setIsDarkMode((prevMode) => {
+      const newMode = !prevMode;
+      localStorage.setItem('mode', JSON.stringify(newMode));
+      return newMode;
+    });
   };
 
   return (
     <BrowserRouter>
       <div
         className={`relative z-0 ${
-          mode == 'dark' ? 'bg-tertiary' : 'bg-white'
+          isDarkMode ? 'bg-tertiary' : 'bg-white'
         } transition-all duration-500`}
       >
         <div
           className={`${
-            mode == 'dark' ? 'bg-gradient-hero-dark' : 'bg-gradient-hero-light'
+            isDarkMode ? 'bg-gradient-hero-dark' : 'bg-gradient-hero-light'
           } bg-cover bg-fixed`}
         >
-          <Navbar mode={mode} onToggleMode={handleToggleMode} />
+          <Navbar isDarkMode={isDarkMode} onToggleMode={handleToggleMode} />
           <Hero />
         </div>
-        <About mode={mode} />
-        <Skills mode={mode} />
-        <Experiencie mode={mode} />
-        <Projects />
+        <About isDarkMode={isDarkMode} />
+        <Skills isDarkMode={isDarkMode} />
+        <Experience isDarkMode={isDarkMode} />
+        <Projects isDarkMode={isDarkMode} />
       </div>
     </BrowserRouter>
   );

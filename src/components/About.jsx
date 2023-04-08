@@ -5,7 +5,7 @@ import { styles } from '../styles';
 import { slideIn, textVariant } from '../utils/variants';
 import { person } from '../assets';
 
-const About = ({ mode }) => {
+const About = ({ isDarkMode }) => {
   return (
     <div className='grid sm:grid-cols-2 grid-cols-1 grid-flow-col-dense justify-evenly transition-all duration-300'>
       <motion.div
@@ -18,21 +18,21 @@ const About = ({ mode }) => {
         <motion.div variants={textVariant()}>
           <h2
             className={`${styles.sectionHeadText} ${
-              mode === 'dark' ? 'text-secondary' : 'text-tertiary'
+              isDarkMode ? 'text-secondary' : 'text-tertiary'
             }`}
           >
             Sobre <span className='text-primary capitalize'>mi</span>
           </h2>
           <p
             className={`${styles.sectionSubText} ${
-              mode === 'dark' ? 'text-secondary' : 'text-tertiary'
+              isDarkMode ? 'text-secondary' : 'text-tertiary'
             } font-bold`}
           >
             Te cuento un poco de lo que hago.
           </p>
           <p
             className={`${
-              mode === 'dark' ? 'text-secondary' : 'text-tertiary'
+              isDarkMode ? 'text-secondary' : 'text-tertiary'
             } mt-5`}
           >
             Desarrollador web con experiencia en el diseño y desarrollo de

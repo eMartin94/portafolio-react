@@ -2,7 +2,7 @@ import Navbar from "./Navbar";
 import Hero from "./Hero";
 import About from './About'
 import Skills from './Skills'
-import Experiencie from './Experiencie';
+import Experience from './Experience';
 import Projects from './Projects';
 import ButtonMode from "./ButtonMode";
 
@@ -11,7 +11,7 @@ export {
   Hero,
   About,
   Skills,
-  Experiencie,
+  Experience,
   Projects,
   ButtonMode,
 }
