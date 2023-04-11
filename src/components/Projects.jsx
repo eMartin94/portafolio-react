@@ -3,29 +3,25 @@ import { motion } from 'framer-motion';
 import { SectionWrapper } from '../hoc';
 import { styles } from '../styles';
 import { projects } from '../constants';
-import { fadeIn, slideIn, textVariant, zoomIn } from '../utils/variants'
-import {
-  AiFillEye,
-  AiFillGithub,
-} from 'react-icons/ai';
+import { fadeIn, slideIn, textVariant, zoomIn } from '../utils/variants';
+import { AiFillEye, AiFillGithub } from 'react-icons/ai';
 
 const Projects = ({ isDarkMode }) => {
   return (
     <>
-      
-        <motion.div variants={textVariant()}>
-          <div>
-            <h2
-              className={`${styles.sectionHeadText} ${
-                isDarkMode ? 'text-secondary' : 'text-tertiary'
-              }`}
-            >
-              Mis <span className='text-primary'>Proyectos</span>
-            </h2>
-          </div>
-        </motion.div>
+      <motion.div variants={textVariant()}>
+        <div>
+          <h2
+            className={`${styles.sectionHeadText} ${
+              isDarkMode ? 'text-secondary' : 'text-tertiary'
+            }`}
+          >
+            Mis <span className='text-primary'>Proyectos</span>
+          </h2>
+        </div>
+      </motion.div>
 
-        <motion.div variants={slideIn('up', 'tween', 0.5, 0.75)}>
+      <motion.div variants={fadeIn('up', 'tween', 0.5, 0.75)}>
         <div className='flex flex-wrap gap-4 justify-center mt-10'>
           {projects.map((project, i) => (
             <div

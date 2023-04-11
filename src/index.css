@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
 
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -19,14 +18,14 @@
   justify-content: center;
   width: 1.6rem;
   height: 1.6rem;
-  gap: .42rem;
+  gap: 0.42rem;
   cursor: pointer;
 }
 .menu .line {
   background-color: #fff;
   height: 2px;
   width: 100%;
-  transition: all .5s;
+  transition: all 0.5s;
   transform-origin: left;
 }
 .menu.dark .line {
@@ -62,7 +61,8 @@
   color: #15141b;
 }
 
-.tippy-box[data-theme~='custom'][data-placement^='bottom'] > .tippy-arrow::before {
+.tippy-box[data-theme~='custom'][data-placement^='bottom']
+  > .tippy-arrow::before {
   border-bottom-color: #5ed8d8;
 }
 
@@ -81,23 +81,27 @@
 
 .box-img-project {
   overflow: hidden;
-
 }
-.box-img-project img{
+.box-img-project img {
   transform: scale(1);
 }
-.box-img-project:hover img{
+.box-img-project:hover img {
   filter: blur(2px);
   transform: scale(1.1);
 }
 .box-img-project .box-icons {
   opacity: 0;
-  transition: all .3s;
+  transition: all 0.3s;
   background-color: transparent;
 }
 .box-img-project:hover .box-icons {
   opacity: 1;
   background-color: rgba(0, 0, 0, 0.5);
+}
+
+.theme-toggle svg {
+  width: 100%;
+  height: 100%;
 }
 
 ::-webkit-scrollbar {
@@ -120,7 +124,7 @@
 }
 
 .html5-color {
-  color: #FFA559;
+  color: #ffa559;
 }
 .css3-color {
   color: #4facfd;
@@ -132,13 +136,13 @@
   color: #5bc029;
 }
 .java-color {
-  color: #93BFCF;
+  color: #93bfcf;
 }
 .thymelife-color {
   color: #1c9768;
 }
 .mysql-color {
-  color: #A2B5BB;
+  color: #a2b5bb;
 }
 .kotlin-color {
   color: #7f52ff;

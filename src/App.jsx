@@ -6,8 +6,10 @@ import {
   Experience,
   Projects,
   About,
+  Foorter,
 } from './components';
 import React, { useEffect, useState } from 'react';
+import Contact from './components/Contact';
 
 const App = () => {
   const [isDarkMode, setIsDarkMode] = useState(() => {
@@ -51,6 +53,8 @@ const App = () => {
         <Skills isDarkMode={isDarkMode} />
         <Experience isDarkMode={isDarkMode} />
         <Projects isDarkMode={isDarkMode} />
+        <Contact isDarkMode={isDarkMode} />
+        <Foorter isDark={isDarkMode} />
       </div>
     </BrowserRouter>
   );

@@ -4,6 +4,8 @@ import { navLink } from '../constants';
 import { styles } from '../styles';
 import { logo, moon, sun } from '../assets';
 import ButtonMode from './ButtonMode';
+import "@theme-toggles/react/css/Within.css"
+import { Within } from "@theme-toggles/react"
 
 const Navbar = ({ isDarkMode, onToggleMode }) => {
   const [active, setActive] = useState('');
@@ -75,7 +77,7 @@ const Navbar = ({ isDarkMode, onToggleMode }) => {
             </ul>
 
             <ButtonMode isDarkMode={isDarkMode} onClick={onToggleMode}>
-              {isDarkMode ? (
+              {/* {isDarkMode ? (
                 <div
                   className='flex flex-row w-full items-center justify-evenly'
                   id='dark-span'
@@ -95,7 +97,14 @@ const Navbar = ({ isDarkMode, onToggleMode }) => {
                     Dark
                   </span>
                 </div>
-              )}
+              )} */}
+              <Within 
+                duration={750} 
+                className={`w-full h-full flex justify-center items-center ${
+                  isDarkMode ? `${scrolled ? 'text-white' : 'text-white'}`
+                  : `${!scrolled ? 'text-white' : 'text-tertiary'}`
+                }`} 
+              />
             </ButtonMode>
           </div>
 
