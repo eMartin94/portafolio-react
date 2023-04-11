@@ -1,9 +1,9 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { motion } from 'framer-motion';
 import { SectionWrapper } from '../hoc';
 import { styles } from '../styles';
-import { fadeIn, slideIn, textVariant } from '../utils/variants';
+import { fadeIn, textVariant } from '../utils/variants';
 import InputWithLabel from './InputWithLabel';
 
 const Contact = ({ isDarkMode }) => {
@@ -16,6 +16,22 @@ const Contact = ({ isDarkMode }) => {
     message: '',
   });
 
+  const [isValid, setIsValid] = useState(false);
+  useEffect(() => {
+    validate();
+  }, [formData]);
+
+  const validate = () => {
+    const isValidName = formData.name.length > 3;
+    const isValidLastName = formData.lastname.length > 3;
+    const isValidEmail = formData.email.match(
+      /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/
+    );
+    const isValidPhone = formData.phone.match(/^(\+?\d{1,3}[- ]?)?\d{9}$/);
+    // return isValidEmail && isValidPhone;
+    setIsValid(isValidEmail && isValidPhone && isValidName && isValidLastName);
+  };
+
   const [loading, setLoading] = useState(false);
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -27,43 +43,47 @@ const Contact = ({ isDarkMode }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setLoading(true);
 
-    const templateParams = {
-      to_name: 'Eduardo',
-      from_name: `${formData.name} ${formData.lastname}`,
-      from_email: formData.email,
-      from_phone: formData.phone,
-      message: formData.message,
-    };
+    // if (validate()) {
+    if (isValid) {
+      setLoading(true);
 
-    emailjs
-      .send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-        templateParams,
-        import.meta.env.VITE_EMAILJS_API_PUBLIC_KEY
-      )
-      .then(
-        () => {
-          setLoading(false);
-          alert('Gracias. Me pondré en contacto contigo lo antes posible.');
-          console.log('Email sent successfully!');
-          formRef.current.reset();
-          setFormData({
-            name: '',
-            lastname: '',
-            email: '',
-            phone: '',
-            message: '',
-          });
-        },
-        (error) => {
-          setLoading(false);
-          alert('Ahhh, algo salió mal. Inténtalo de nuevo.');
-          console.log('Error sending email:', error);
-        }
-      );
+      const templateParams = {
+        to_name: 'Eduardo',
+        from_name: `${formData.name} ${formData.lastname}`,
+        from_email: formData.email,
+        from_phone: formData.phone,
+        message: formData.message,
+      };
+
+      emailjs
+        .send(
+          import.meta.env.VITE_EMAILJS_SERVICE_ID,
+          import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+          templateParams,
+          import.meta.env.VITE_EMAILJS_API_PUBLIC_KEY
+        )
+        .then(
+          () => {
+            setLoading(false);
+            alert('Gracias. Me pondré en contacto contigo lo antes posible.');
+            console.log('Email sent successfully!');
+            formRef.current.reset();
+            setFormData({
+              name: '',
+              lastname: '',
+              email: '',
+              phone: '',
+              message: '',
+            });
+          },
+          (error) => {
+            setLoading(false);
+            alert('Ahhh, algo salió mal. Inténtalo de nuevo.');
+            console.log('Error sending email:', error);
+          }
+        );
+    }
   };
 
   return (
@@ -91,44 +111,74 @@ const Contact = ({ isDarkMode }) => {
           >
             Solo di Hola!
           </h3>
-          <p className={`${isDarkMode ? 'text-white' : 'text-tertiary'} mb-5`}>
+          <p className={`${isDarkMode ? 'text-white' : 'text-tertiary'} mb-10`}>
             Déjame saber tu comentario
           </p>
 
-          <form ref={formRef} onSubmit={handleSubmit}>
-            <InputWithLabel
-              isDarkMode={isDarkMode}
-              label='Name'
-              type='text'
-              name='name'
-              value={formData.name}
-              onChange={handleChange}
-            />
-            <InputWithLabel
-              isDarkMode={isDarkMode}
-              label='Email'
-              type='email'
-              name='email'
-              value={formData.email}
-              onChange={handleChange}
-            />
-            <InputWithLabel
-              isDarkMode={isDarkMode}
-              label='Phone'
-              type='tel'
-              name='phone'
-              value={formData.phone}
-              onChange={handleChange}
-            />
-            <InputWithLabel
-              isDarkMode={isDarkMode}
+          <form
+            ref={formRef}
+            onSubmit={handleSubmit}
+            className='flex flex-col w-full'
+          >
+            <div className='grid grid-cols-1 md:grid-cols-2 w-full gap-5'>
+              <InputWithLabel
+                isDarkMode={isDarkMode}
+                label='Name'
+                type='text'
+                name='name'
+                value={formData.name}
+                onChange={handleChange}
+                requerid
+              />
+              <InputWithLabel
+                isDarkMode={isDarkMode}
+                label='Name'
+                type='text'
+                name='lastname'
+                value={formData.lastname}
+                onChange={handleChange}
+                requerid
+              />
+            </div>
+            <div className='grid grid-cols-1 md:grid-cols-2 w-full gap-5'>
+              <InputWithLabel
+                isDarkMode={isDarkMode}
+                label='Email'
+                type='email'
+                name='email'
+                value={formData.email}
+                onChange={handleChange}
+                validateValue={() => {}}
+              />
+              <InputWithLabel
+                isDarkMode={isDarkMode}
+                label='Phone'
+                type='tel'
+                name='phone'
+                value={formData.phone}
+                onChange={handleChange}
+                validateValue={() => {}}
+              />
+            </div>
+            <textarea
               label='Message'
               type='text'
+              rows={10}
               name='message'
               value={formData.message}
               onChange={handleChange}
+              className={`w-full rounded-lg resize-none outline-none px-3 py-3 ${
+                isDarkMode
+                  ? 'bg-gray-100 text-tertiary'
+                  : 'bg-tertiary text-white'
+              }`}
+              placeholder='Escribe tu comentario aquí'
             />
-            <button type='submit' className={`${styles.btn} max-w-xs mt-5 disabled:opacity-50`} >
+            <button
+              type='submit'
+              className={`${styles.btn} max-w-xs mt-5 disabled:opacity-50`}
+              disabled={!isValid}
+            >
               {loading ? 'Enviando...' : 'Enviar'}
             </button>
           </form>
