@@ -98,22 +98,22 @@ const Hero = () => {
                 className='flex flex-row gap-5 mt-5 justify-center md:justify-start'
               >
                 <li className={styles.socialList}>
-                  <a href='https://www.facebook.com/' aria-label='Facebook' className={styles.iconSocialList}>
+                  <a href='https://www.facebook.com/' aria-label='Facebook' target='_blank' className={styles.iconSocialList}>
                     <AiFillFacebook />
                   </a>
                 </li>
                 <li className={styles.socialList}>
-                  <a href='https://www.instagram.com/' aria-label='Instagram' className={styles.iconSocialList}>
+                  <a href='https://www.instagram.com/' aria-label='Instagram' target='_blank' className={styles.iconSocialList}>
                     <AiFillInstagram />
                   </a>
                 </li>
                 <li className={styles.socialList}>
-                  <a href='https://github.com/eMartin94' aria-label='Github' className={styles.iconSocialList}>
+                  <a href='https://github.com/eMartin94' aria-label='Github' target='_blank' className={styles.iconSocialList}>
                     <AiFillGithub />
                   </a>
                 </li>
                 <li className={styles.socialList}>
-                  <a href='www.linkedin.com/in/emartinpizango' aria-label='LinkedIn' className={styles.iconSocialList}>
+                  <a href='www.linkedin.com/in/emartinpizango' aria-label='LinkedIn' target='_blank' className={styles.iconSocialList}>
                     <AiFillLinkedin />
                   </a>
                 </li>
