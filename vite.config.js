@@ -6,11 +6,10 @@ export default defineConfig({
   plugins: [
     react(),
     VitePWA({
-      strategies: 'cacheFirst',
+      strategies: 'staleWhileRevalidate',
       includeAssets: [
-        // 'favicon.ico',
-        // 'robots.txt',
-        'assets/**/*',
+        'assets/**/*.{png,jpg,jpeg,gif,svg,webp}',
+        'assets/index.js',
       ],
       manifest: {
         name: 'Mi Portafolio',
