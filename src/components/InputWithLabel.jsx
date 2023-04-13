@@ -6,6 +6,7 @@ function InputWithLabel({
   label,
   type = 'text',
   validate,
+  id,
   ...rest
 }) {
   const [isFocused, setIsFocused] = useState(false);
@@ -51,8 +52,9 @@ function InputWithLabel({
 
   return (
     <div className='relative mb-10'>
-      <label className={labelClasses}>{label}</label>
+      <label htmlFor={id} className={labelClasses}>{label}</label>
       <input
+        id={id}
         className={`block w-full px-3 py-3 mt-1 rounded-md ${
           isDarkMode ? 'bg-gray-100 text-tertiary' : 'bg-tertiary text-white'
         } border-transparent focus:bg-opacity-90  focus:ring-0 outline-none`}

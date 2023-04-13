@@ -122,6 +122,7 @@ const Contact = ({ isDarkMode }) => {
           >
             <div className='grid grid-cols-1 md:grid-cols-2 w-full gap-5'>
               <InputWithLabel
+                id='name'
                 isDarkMode={isDarkMode}
                 label='Name'
                 type='text'
@@ -131,8 +132,9 @@ const Contact = ({ isDarkMode }) => {
                 requerid
               />
               <InputWithLabel
+                id='lastname'
                 isDarkMode={isDarkMode}
-                label='Name'
+                label='Lastname'
                 type='text'
                 name='lastname'
                 value={formData.lastname}
@@ -142,6 +144,7 @@ const Contact = ({ isDarkMode }) => {
             </div>
             <div className='grid grid-cols-1 md:grid-cols-2 w-full gap-5'>
               <InputWithLabel
+                id='email'
                 isDarkMode={isDarkMode}
                 label='Email'
                 type='email'
@@ -151,6 +154,7 @@ const Contact = ({ isDarkMode }) => {
                 validateValue={() => {}}
               />
               <InputWithLabel
+                id='phone'
                 isDarkMode={isDarkMode}
                 label='Phone'
                 type='tel'
