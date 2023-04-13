@@ -21,15 +21,15 @@ export default defineConfig({
         theme_color: '#ffffff',
         icons: [
           {
-            src: 'assets/logo-code.svg',
+            src: 'assets/logo-code.webp',
             sizes: '192x192',
-            type: 'image/png',
+            type: 'image/webp',
             purpose: "any",
           },
           {
-            src: 'assets/logo-code.svg',
+            src: 'assets/logo-code.webp',
             sizes: '512x512',
-            type: 'image/png',
+            type: 'image/webp',
             purpose: "maskable",
           },
         ],
