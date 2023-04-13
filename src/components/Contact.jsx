@@ -91,10 +91,17 @@ const Contact = ({ isDarkMode }) => {
       <motion.div variants={textVariant()}>
         <h2
           className={`${styles.sectionHeadText} ${
-            isDarkMode ? 'text-secondary' : 'text-tertiary'
+            isDarkMode ? 'text-white' : 'text-tertiary'
           }`}
         >
-          Contácta<span className='text-primary'>Me</span>
+          Contácta
+          <span
+            className={`${
+              isDarkMode ? 'text-primary' : 'text-alternative'
+            } capitalize`}
+          >
+            Me
+          </span>
         </h2>
       </motion.div>
 
@@ -129,7 +136,6 @@ const Contact = ({ isDarkMode }) => {
                 name='name'
                 value={formData.name}
                 onChange={handleChange}
-                requerid
               />
               <InputWithLabel
                 id='lastname'
@@ -139,7 +145,6 @@ const Contact = ({ isDarkMode }) => {
                 name='lastname'
                 value={formData.lastname}
                 onChange={handleChange}
-                requerid
               />
             </div>
             <div className='grid grid-cols-1 md:grid-cols-2 w-full gap-5'>
@@ -151,7 +156,7 @@ const Contact = ({ isDarkMode }) => {
                 name='email'
                 value={formData.email}
                 onChange={handleChange}
-                validateValue={() => {}}
+                validate={validate}
               />
               <InputWithLabel
                 id='phone'
@@ -161,7 +166,7 @@ const Contact = ({ isDarkMode }) => {
                 name='phone'
                 value={formData.phone}
                 onChange={handleChange}
-                validateValue={() => {}}
+                validate={validate}
               />
             </div>
             <textarea
@@ -180,7 +185,12 @@ const Contact = ({ isDarkMode }) => {
             />
             <button
               type='submit'
-              className={`${styles.btn} max-w-xs mt-5 disabled:opacity-50`}
+              // className={`${styles.btn} `}
+              className={`${styles.btn} ${
+                isDarkMode
+                  ? 'bg-primary border-primary text-tertiary hover:text-primary'
+                  : 'bg-alternative border-alternative text-white hover:text-alternative'
+              } max-w-xs mt-5 disabled:opacity-50`}
               disabled={!isValid}
             >
               {loading ? 'Enviando...' : 'Enviar'}

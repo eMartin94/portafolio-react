@@ -18,10 +18,17 @@ const About = ({ isDarkMode }) => {
         <motion.div variants={textVariant()}>
           <h2
             className={`${styles.sectionHeadText} ${
-              isDarkMode ? 'text-secondary' : 'text-tertiary'
+              isDarkMode ? 'text-white' : 'text-tertiary'
             }`}
           >
-            Sobre <span className='text-primary capitalize'>mi</span>
+            Sobre{' '}
+            <span
+              className={`${
+                isDarkMode ? 'text-primary' : 'text-alternative'
+              } capitalize`}
+            >
+              mi
+            </span>
           </h2>
           <p
             className={`${styles.sectionSubText} ${
@@ -45,7 +52,11 @@ const About = ({ isDarkMode }) => {
         <div className='mt-10'>
           <motion.button
             variants={textVariant(0.5)}
-            className={`${styles.btn}`}
+            className={`${styles.btn} ${
+              isDarkMode
+                ? 'bg-primary border-primary text-tertiary hover:text-primary'
+                : 'bg-alternative border-alternative text-white hover:text-alternative'
+            }`}
           >
             Leer más
           </motion.button>

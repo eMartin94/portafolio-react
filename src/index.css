@@ -22,7 +22,7 @@
   cursor: pointer;
 }
 .menu .line {
-  background-color: #fff;
+  background-color: #15141b;
   height: 2px;
   width: 100%;
   transition: all 0.5s;
@@ -35,6 +35,9 @@
   background-color: #15141b;
 }
 .menu:hover .line {
+  background-color: #458a8a;
+}
+.menu.dark:hover .line {
   background-color: #5ed8d8;
 }
 

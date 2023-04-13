@@ -1,11 +1,10 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { navLink } from '../constants';
 import { styles } from '../styles';
-import { logo, moon, sun } from '../assets';
 import ButtonMode from './ButtonMode';
-import "@theme-toggles/react/css/Within.css"
-import { Within } from "@theme-toggles/react"
+import '@theme-toggles/react/css/Within.css';
+import { Within } from '@theme-toggles/react';
 
 const Navbar = ({ isDarkMode, onToggleMode }) => {
   const [active, setActive] = useState('');
@@ -42,7 +41,9 @@ const Navbar = ({ isDarkMode, onToggleMode }) => {
       <div className='w-full flex justify-between items-center max-w-7xl px-0 md:px-5'>
         <Link
           to='/'
-          className='flex text-primary items-center gap-1'
+          className={`${
+            isDarkMode ? 'text-primary' : 'text-alternative'
+          } flex items-center gap-1`}
           onClick={() => {
             setActive('');
             setToggle(false);
@@ -65,10 +66,14 @@ const Navbar = ({ isDarkMode, onToggleMode }) => {
                       ? `${isDarkMode ? 'text-primary' : 'text-primary'}`
                       : `${
                           isDarkMode
-                            ? `${scrolled ? 'text-white' : 'text-white'}`
-                            : `${!scrolled ? 'text-white' : 'text-tertiary'}`
+                            ? `${
+                                scrolled ? 'text-white' : 'text-white'
+                              } hover:text-primary`
+                            : `${
+                                !scrolled ? 'text-tertiary' : 'text-tertiary'
+                              } hover:text-alternative`
                         }`
-                  }  hover:text-primary cursor-pointer transition-all duration-500 ease-in-out`}
+                  } cursor-pointer transition-all duration-500 ease-in-out`}
                   onClick={() => setActive(nav.title)}
                 >
                   <a href={`#${nav.id}`}>{nav.title}</a>
@@ -76,7 +81,7 @@ const Navbar = ({ isDarkMode, onToggleMode }) => {
               ))}
             </ul>
 
-            <ButtonMode isDarkMode={isDarkMode} onClick={onToggleMode}>
+            <ButtonMode onClick={onToggleMode}>
               {/* {isDarkMode ? (
                 <div
                   className='flex flex-row w-full items-center justify-evenly'
@@ -98,12 +103,17 @@ const Navbar = ({ isDarkMode, onToggleMode }) => {
                   </span>
                 </div>
               )} */}
-              <Within 
-                duration={750} 
+              <Within
+                duration={750}
                 className={`w-full h-full flex justify-center items-center ${
-                  isDarkMode ? `${scrolled ? 'text-white' : 'text-white'}`
-                  : `${!scrolled ? 'text-white' : 'text-tertiary'}`
-                }`} 
+                  isDarkMode
+                    ? `${
+                        scrolled ? 'text-white' : 'text-white'
+                      } hover:text-primary`
+                    : `${
+                        !scrolled ? 'text-tertiary' : 'text-tertiary'
+                      } hover:text-alternative`
+                } transition-all duration-300`}
               />
             </ButtonMode>
           </div>
@@ -120,16 +130,20 @@ const Navbar = ({ isDarkMode, onToggleMode }) => {
               <div className='line'></div>
             </div>
             <ul
-              className={`${
-                toggle ? 'flex' : 'hidden'
-              } bg-tertiary bg-opacity-90 backdrop-blur-sm flex-col mt-7 gap-5 absolute w-full left-0 p-5 justify-center items-center h-screen`}
+              className={`${toggle ? 'flex' : 'hidden'} ${
+                isDarkMode ? 'bg-tertiary' : 'bg-white'
+              } bg-opacity-90 backdrop-blur-sm flex-col mt-7 gap-5 absolute w-full left-0 p-5 justify-center items-center h-screen`}
             >
               {navLink.map((nav) => (
                 <li
                   key={nav.id}
                   className={`${
-                    active === nav.title ? 'text-primary' : 'text-white'
-                  }  hover:text-primary text-[20px] cursor-pointer transition-all duration-500 ease-in-out`}
+                    active === nav.title
+                      ? 'text-alternative'
+                      : isDarkMode
+                      ? 'text-white hover:text-primary '
+                      : 'text-tertiary hover:text-alternative '
+                  }  text-[20px] cursor-pointer transition-all duration-500 ease-in-out`}
                   onClick={() => {
                     setActive(nav.title);
                     setToggle(!toggle);

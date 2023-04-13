@@ -52,7 +52,9 @@ function InputWithLabel({
 
   return (
     <div className='relative mb-10'>
-      <label htmlFor={id} className={labelClasses}>{label}</label>
+      <label htmlFor={id} className={labelClasses}>
+        {label}
+      </label>
       <input
         id={id}
         className={`block w-full px-3 py-3 mt-1 rounded-md ${

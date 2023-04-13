@@ -8,7 +8,7 @@ import {
   About,
   Foorter,
 } from './components';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Contact from './components/Contact';
 
 const App = () => {
@@ -47,7 +47,7 @@ const App = () => {
           } bg-cover bg-fixed`}
         >
           <Navbar isDarkMode={isDarkMode} onToggleMode={handleToggleMode} />
-          <Hero />
+          <Hero isDarkMode={isDarkMode} />
         </div>
         <About isDarkMode={isDarkMode} />
         <Skills isDarkMode={isDarkMode} />

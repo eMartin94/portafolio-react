@@ -15,10 +15,18 @@ const Experience = ({ isDarkMode }) => {
       <div>
         <h2
           className={`${styles.sectionHeadText} ${
-            isDarkMode ? 'text-secondary' : 'text-tertiary'
+            isDarkMode ? 'text-white' : 'text-tertiary'
           }`}
         >
-          Mi <span className='text-primary'> Experiencia</span>
+          Mi{' '}
+          <span
+            className={`${
+              isDarkMode ? 'text-primary' : 'text-alternative'
+            } capitalize`}
+          >
+            {' '}
+            Experiencia
+          </span>
         </h2>
       </div>
 

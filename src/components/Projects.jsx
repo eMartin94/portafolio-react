@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { SectionWrapper } from '../hoc';
 import { styles } from '../styles';
 import { projects } from '../constants';
-import { fadeIn, slideIn, textVariant, zoomIn } from '../utils/variants';
+import { fadeIn, textVariant } from '../utils/variants';
 import { AiFillEye, AiFillGithub } from 'react-icons/ai';
 
 const Projects = ({ isDarkMode }) => {
@@ -13,10 +13,17 @@ const Projects = ({ isDarkMode }) => {
         <div>
           <h2
             className={`${styles.sectionHeadText} ${
-              isDarkMode ? 'text-secondary' : 'text-tertiary'
+              isDarkMode ? 'text-white' : 'text-tertiary'
             }`}
           >
-            Mis <span className='text-primary'>Proyectos</span>
+            Mis{' '}
+            <span
+              className={`${
+                isDarkMode ? 'text-primary' : 'text-alternative'
+              } capitalize`}
+            >
+              Proyectos
+            </span>
           </h2>
         </div>
       </motion.div>
@@ -37,10 +44,18 @@ const Projects = ({ isDarkMode }) => {
                   className='w-full h-full rounded-2xl object-contain transition-all duration-300'
                 />
                 <div className='box-icons absolute top-0 w-full h-full flex justify-center items-center gap-4'>
-                  <a href={project.source_code_link} aria-label={project.name} target='_blank'>
+                  <a
+                    href={project.source_code_link}
+                    aria-label={project.name}
+                    target='_blank'
+                  >
                     <AiFillGithub className='w-[40px] h-[40px] text-white hover:text-primary transition-all duration-300 cursor-pointer drop-shadow-md' />
                   </a>
-                  <a href={project.page_link} aria-label={project.name} target='_blank'>
+                  <a
+                    href={project.page_link}
+                    aria-label={project.name}
+                    target='_blank'
+                  >
                     <AiFillEye className='w-[40px] h-[40px] text-white hover:text-primary transition-all duration-300 cursor-pointer drop-shadow-md' />
                   </a>
                 </div>

@@ -35,10 +35,17 @@ const Skills = ({ isDarkMode }) => {
       <motion.div variants={textVariant()}>
         <h2
           className={`${styles.sectionHeadText} ${
-            isDarkMode ? 'text-secondary' : 'text-tertiary'
+            isDarkMode ? 'text-white' : 'text-tertiary'
           }`}
         >
-          Mis <span className='text-primary'>Skills</span>
+          Mis{' '}
+          <span
+            className={`${
+              isDarkMode ? 'text-primary' : 'text-alternative'
+            } capitalize`}
+          >
+            Skills
+          </span>
         </h2>
       </motion.div>
 

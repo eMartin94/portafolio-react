@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { styles } from '../styles';
-import { slideIn, staggerContainer, textVariant } from '../utils/variants';
+import { staggerContainer, textVariant } from '../utils/variants';
 import { photo, micv } from '../assets';
 import { TypeAnimation } from 'react-type-animation';
 import {
@@ -13,7 +13,7 @@ import {
   AiOutlineLoading,
 } from 'react-icons/ai';
 
-const Hero = () => {
+const Hero = ({ isDarkMode }) => {
   const [downloading, setDownloading] = useState(false);
   const [completed, setCompleted] = useState(false);
 
@@ -70,26 +70,42 @@ const Hero = () => {
       className='relative w-full h-screen mx-auto'
     >
       <div
-        className={` absolute inset-0 top-[70px] ${styles.paddingX} flex flex-row gap-5`}
+        className={`absolute inset-0 top-[70px] ${styles.paddingX} flex flex-row gap-5`}
       >
         <div
           className={`${styles.paddingY} grid md:grid-cols-2 grid-cols-1 gap-5 place-items-center w-full h-ful`}
         >
           <div className='flex flex-col w-full justify-center items-center md:items-start z-10 xl:pl-20'>
-            <h1 className={`${styles.heroHeadText}`}>Martin Pizango</h1>
+            <h1
+              className={`${styles.heroHeadText} ${
+                isDarkMode ? 'text-white' : 'text-tertiary'
+              }`}
+            >
+              Martin Pizango
+            </h1>
             <div className='w-full items-center md:items-start flex flex-col gap-2'>
-              <span className={`${styles.heroSubText}`}>Soy</span>
+              <span
+                className={`${styles.heroSubText} ${
+                  isDarkMode ? 'text-white' : 'text-tertiary'
+                }`}
+              >
+                Soy
+              </span>
               <TypeAnimation
                 sequence={['Desarrollador!', 2000, 'Diseñador!', 2000]}
                 cursor={true}
                 repeat={Infinity}
-                className='font-bold text-primary text-[30px] lg:text-[60px] sm:text-[45px] lg:leading-[98px]'
+                className={`font-bold text-[30px] lg:text-[60px] sm:text-[45px] lg:leading-[98px] ${
+                  isDarkMode ? 'text-primary' : 'text-alternative'
+                }`}
               />
             </div>
             <div className='mt-5'>
               <motion.p
                 variants={textVariant()}
-                className={`text-[14px] sm:text-[16px] text-white`}
+                className={`text-[14px] sm:text-[16px] ${
+                  isDarkMode ? 'text-white' : 'text-tertiary'
+                }`}
               >
                 Sígueme en mis redes sociales:
               </motion.p>
@@ -97,23 +113,67 @@ const Hero = () => {
                 variants={textVariant()}
                 className='flex flex-row gap-5 mt-5 justify-center md:justify-start'
               >
-                <li className={styles.socialList}>
-                  <a href='https://www.facebook.com/' aria-label='Facebook' target='_blank' className={styles.iconSocialList}>
+                <li
+                  className={`${styles.socialList} ${
+                    isDarkMode
+                      ? 'border-white hover:border-primary text-white hover:text-primary'
+                      : 'border-tertiary hover:border-alternative text-tertiary hover:text-alternative'
+                  }`}
+                >
+                  <a
+                    href='https://www.facebook.com/'
+                    aria-label='Facebook'
+                    target='_blank'
+                    className={styles.iconSocialList}
+                  >
                     <AiFillFacebook />
                   </a>
                 </li>
-                <li className={styles.socialList}>
-                  <a href='https://www.instagram.com/' aria-label='Instagram' target='_blank' className={styles.iconSocialList}>
+                <li
+                  className={`${styles.socialList} ${
+                    isDarkMode
+                      ? 'border-white hover:border-primary text-white hover:text-primary'
+                      : 'border-tertiary hover:border-alternative text-tertiary hover:text-alternative'
+                  }`}
+                >
+                  <a
+                    href='https://www.instagram.com/'
+                    aria-label='Instagram'
+                    target='_blank'
+                    className={styles.iconSocialList}
+                  >
                     <AiFillInstagram />
                   </a>
                 </li>
-                <li className={styles.socialList}>
-                  <a href='https://github.com/eMartin94' aria-label='Github' target='_blank' className={styles.iconSocialList}>
+                <li
+                  className={`${styles.socialList} ${
+                    isDarkMode
+                      ? 'border-white hover:border-primary text-white hover:text-primary'
+                      : 'border-tertiary hover:border-alternative text-tertiary hover:text-alternative'
+                  }`}
+                >
+                  <a
+                    href='https://github.com/eMartin94'
+                    aria-label='Github'
+                    target='_blank'
+                    className={styles.iconSocialList}
+                  >
                     <AiFillGithub />
                   </a>
                 </li>
-                <li className={styles.socialList}>
-                  <a href='www.linkedin.com/in/emartinpizango' aria-label='LinkedIn' target='_blank' className={styles.iconSocialList}>
+                <li
+                  className={`${styles.socialList} ${
+                    isDarkMode
+                      ? 'border-white hover:border-primary text-white hover:text-primary'
+                      : 'border-tertiary hover:border-alternative text-tertiary hover:text-alternative'
+                  }`}
+                >
+                  <a
+                    href='www.linkedin.com/in/emartinpizango'
+                    aria-label='LinkedIn'
+                    target='_blank'
+                    className={styles.iconSocialList}
+                  >
                     <AiFillLinkedin />
                   </a>
                 </li>
@@ -123,7 +183,11 @@ const Hero = () => {
               <motion.a
                 variants={textVariant()}
                 href={micv}
-                className={`${styles.btn}`}
+                className={`${styles.btn} ${
+                  isDarkMode
+                    ? 'bg-primary border-primary text-tertiary hover:text-primary'
+                    : 'bg-alternative border-alternative text-white hover:text-alternative'
+                }`}
                 download
                 onClick={handleClick}
               >
