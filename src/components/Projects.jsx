@@ -37,10 +37,10 @@ const Projects = ({ isDarkMode }) => {
                   className='w-full h-full rounded-2xl object-contain transition-all duration-300'
                 />
                 <div className='box-icons absolute top-0 w-full h-full flex justify-center items-center gap-4'>
-                  <a href={project.source_code_link} target='_blank'>
+                  <a href={project.source_code_link} aria-label={project.name} target='_blank'>
                     <AiFillGithub className='w-[40px] h-[40px] text-white hover:text-primary transition-all duration-300 cursor-pointer drop-shadow-md' />
                   </a>
-                  <a href={project.page_link} target='_blank'>
+                  <a href={project.page_link} aria-label={project.name} target='_blank'>
                     <AiFillEye className='w-[40px] h-[40px] text-white hover:text-primary transition-all duration-300 cursor-pointer drop-shadow-md' />
                   </a>
                 </div>

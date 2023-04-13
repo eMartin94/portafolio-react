@@ -21,11 +21,13 @@ export default defineConfig({
             src: 'assets/logo-code.svg',
             sizes: '192x192',
             type: 'image/png',
+            purpose: "any",
           },
           {
             src: 'assets/logo-code.svg',
             sizes: '512x512',
             type: 'image/png',
+            purpose: "maskable",
           },
         ],
       },
