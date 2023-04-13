@@ -6,7 +6,11 @@ export default defineConfig({
   plugins: [
     react(),
     VitePWA({
-      strategies: 'staleWhileRevalidate',
+      // strategies: 'staleWhileRevalidate',
+      strategies: {
+        'index.html': 'cacheFirst',
+        'assets/**/*': 'cacheFirst',
+      },
       includeAssets: [
         'assets/**/*.{png,jpg,jpeg,gif,svg,webp}',
         'assets/index.js',
