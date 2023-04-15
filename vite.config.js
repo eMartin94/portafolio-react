@@ -38,7 +38,7 @@ export default defineConfig({
         description: 'Desarrolo de mi portafolio con React, Tailwindcss y otras librerías',
         'og:title': 'Mi Portafolio',
         'og:description': 'Desarrolo de mi portafolio con React, Tailwindcss y otras librerías',
-        'og:image': './src/assets/img-portada.webp',
+        'og:image': '/src/assets/img-portada.webp',
         'og:image:type': 'image/webp',
         'og:image:width': '1200',
         'og:image:height': '630',
