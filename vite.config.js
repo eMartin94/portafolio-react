@@ -19,20 +19,20 @@ export default defineConfig({
         name: 'Mi Portafolio',
         short_name: 'Portafolio',
         theme_color: '#ffffff',
-        icons: [
-          {
-            src: './src/assets/img-portada.webp',
-            sizes: '192x192',
-            type: 'image/webp',
-            purpose: "any",
-          },
-          {
-            src: './src/assets/img-portada.webp',
-            sizes: '512x512',
-            type: 'image/webp',
-            purpose: "maskable",
-          },
-        ],
+        // icons: [
+        //   {
+        //     src: './src/assets/img-portada.webp',
+        //     sizes: '192x192',
+        //     type: 'image/webp',
+        //     purpose: "any",
+        //   },
+        //   {
+        //     src: './src/assets/img-portada.webp',
+        //     sizes: '512x512',
+        //     type: 'image/webp',
+        //     purpose: "maskable",
+        //   },
+        // ],
       },
       meta: {
         description: 'Desarrolo de mi portafolio con React, Tailwindcss y otras librerías',
