@@ -1,6 +1,7 @@
 import {
   autocad,
   bootstrap,
+  perusmart,
   consigueventas,
   css3,
   excel,
@@ -24,6 +25,9 @@ import {
   weatherapp,
   ahorcadoapp,
   coursesonline,
+  oracle,
+  csharp,
+  dotnet,
 } from '../assets';
 
 const navLink = [
@@ -87,6 +91,18 @@ const skills = [
     icon: mysql,
   },
   {
+    name: 'Oracle',
+    icon: oracle,
+  },
+  {
+    name: 'C Sharp',
+    icon: csharp,
+  },
+  {
+    name: '.Net',
+    icon: dotnet,
+  },
+  {
     name: 'Git',
     icon: git,
   },
@@ -125,6 +141,23 @@ const otherSkills = [
 
 const experiences = [
   {
+    title: 'Desarrollador Backend',
+    company_name: 'Peru Smart',
+    icon: perusmart,
+    iconBgDark: '#fff',
+    iconBgLight: '#15141b',
+    colorDark: '#15141b',
+    colorLight: '#fff',
+    date: 'Febrero 2023 - Junio 2023',
+    points: [
+      'Resolución de problemas y en el mantenimiento de sistemas existentes utilizando C#, .NET y Oracle, lo que incluyó la identificación y corrección de errores, así como la implementación de mejoras en la funcionalidad.',
+      'Implementar y mantener el diseño visual de la aplicación.',
+      'Optimización de rendimiento en aplicaciones basadas en C# y .NET, mejorando la eficiencia y el tiempo de respuesta.',
+    ],
+    achievement:
+      'Integración de bases de datos utilizando Oracle y PL/SQL, desarrollando consultas y procedimientos almacenados para garantizar la correcta extracción y manipulación de datos.',
+  },
+  {
     title: 'Desarrollador Frontend',
     company_name: 'Grupo Consigueventas Inversiones E.I.R.L',
     icon: consigueventas,
@@ -151,8 +184,8 @@ const experiences = [
     colorLight: '#fff',
     date: 'Noviembre 2020 - Abril 2021',
     points: [
-      'Consultoría en el amoblamiento de oficinas.', 
-      'Registrar y actualizar información en la ERP Odoo.', 
+      'Consultoría en el amoblamiento de oficinas.',
+      'Registrar y actualizar información en la ERP Odoo.',
       'Realizar seguimiento a clientes para fidelizar relación con la empresa.',
     ],
     achievement: 'Aumentar la cartera de clientes buscando nuevas oportunidades de venta.',
@@ -167,8 +200,8 @@ const experiences = [
     colorLight: '#fff',
     date: 'Febrero 2020 - Marzo 2020',
     points: [
-      'Planificar y participar en inventarios del almacén. ', 
-      'Solicitar cotizaciones, evaluar y generar órdenes de compra.', 
+      'Planificar y participar en inventarios del almacén. ',
+      'Solicitar cotizaciones, evaluar y generar órdenes de compra.',
       'Ingresar y registrar productos en el sistema de almacén',
     ],
     achievement: 'Implementación de Kardex para el seguimiento de entradas y salidas.',
@@ -183,8 +216,8 @@ const experiences = [
     colorLight: '#fff',
     date: 'Diciembre 2017 - Julio 2019',
     points: [
-      'Evaluar y contratar servicios de transporte y alquiler de servicios.', 
-      'Solicitar cotizaciones, evaluar y generar órdenes de compra.', 
+      'Evaluar y contratar servicios de transporte y alquiler de servicios.',
+      'Solicitar cotizaciones, evaluar y generar órdenes de compra.',
       'Planificar y participar en inventarios del almacén.',
     ],
     achievement: 'Minimizar costos y asegurar el flujo continuo de la producción a un 90%',

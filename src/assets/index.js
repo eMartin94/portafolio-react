@@ -16,9 +16,12 @@ import reactjs from './skills/reactjs.svg'
 import tailwindcss from './skills/tailwindcss.svg'
 import word from './skills/word.svg'
 import bootstrap from './skills/bootstrap.svg'
+import oracle from './skills/oracle.svg'
+import csharp from './skills/csharp.svg'
+import dotnet from './skills/dotnet.svg'
 
 import photo from './photo.webp'
-import micv from './CV-Eduardo_Pizango.pdf'
+import micv from './CV-Eduardo__Pizango.pdf'
 // import logo from './logo.svg'
 import logo from './logo-code.svg'
 import person from './person.webp'
@@ -32,6 +35,7 @@ import consigueventas from './company/consigueventas-logo.webp'
 import hcg from './company/hcg-logo.webp'
 import megaoffice from './company/megaoffice-logo.webp'
 import gecoi from './company/gecoi-logo.webp'
+import perusmart from './company/perusmart.webp'
 
 import {
   AiFillInstagram,
@@ -63,6 +67,9 @@ export {
   tailwindcss,
   word,
   bootstrap,
+  oracle,
+  csharp,
+  dotnet,
   AiFillInstagram,
   AiFillGithub,
   AiFillLinkedin,
@@ -74,6 +81,7 @@ export {
   photo,
   micv,
   logo,
+  perusmart,
   consigueventas,
   hcg,
   megaoffice,
