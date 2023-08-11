@@ -148,7 +148,7 @@ const experiences = [
     iconBgLight: '#15141b',
     colorDark: '#15141b',
     colorLight: '#fff',
-    date: 'Febrero 2023 - Junio 2023',
+    date: 'Febrero 2023 - Julio 2023',
     points: [
       'Resolución de problemas y en el mantenimiento de sistemas existentes utilizando C#, .NET y Oracle, lo que incluyó la identificación y corrección de errores, así como la implementación de mejoras en la funcionalidad.',
       'Implementar y mantener el diseño visual de la aplicación.',

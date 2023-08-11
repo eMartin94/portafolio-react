@@ -21,7 +21,7 @@ import csharp from './skills/csharp.svg'
 import dotnet from './skills/dotnet.svg'
 
 import photo from './photo.webp'
-import micv from './CV-Eduardo__Pizango.pdf'
+import micv from './CV-EDUARDO_PIZANGO.pdf'
 // import logo from './logo.svg'
 import logo from './logo-code.svg'
 import person from './person.webp'
